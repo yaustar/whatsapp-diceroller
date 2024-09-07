@@ -1,6 +1,20 @@
 const venom = require('venom-bot');
 const dndDiceRoller = require('./dnd-dice-roller');
 
+venom
+    .create({
+        session: 'dice-roller', // name of session
+        //headless: false
+    })
+    .then((client) => {    
+        console.log('started');
+        start(client);
+    }) 
+    .catch((erro) => {
+        console.log(erro);
+    });
+
+
 /**
  * @param client
  * @param {string} sendee
@@ -37,11 +51,14 @@ function start(client) {
                         diceNotation += command[i];
                     }
 
-                    const content = await dndDiceRoller.getDiceRoll(diceNotation);
+                    console.log('rolling ' + diceNotation);
+
                     try {
+                        const content = await dndDiceRoller.getDiceRoll(diceNotation);
                         sendMessage(client, from, content);
-                    } catch {
-                        sendMessage(client, from, "The dice have shattered in the cup 👀. Tell Steven to sweep up the pieces 🧹");
+                    } catch (e) {
+                        sendMessage(client, from, "The dice have shattered in the cup 👀. Check the dice notation: https://tinyurl.com/mrxrwnvp");
+                        console.warn(e);
 
                     }
                 } break;

@@ -1,7 +1,6 @@
 const dndDiceRoller = require('./dnd-dice-roller');
 
 (async function() {
-    dndDiceRoller.init();
     let result = await dndDiceRoller.getDiceRoll("");
     console.log(result);
     result = await dndDiceRoller.getDiceRoll("2d6 // ice damage");

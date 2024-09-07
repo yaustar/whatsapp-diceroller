@@ -19,8 +19,6 @@
     "private": "true",
     "dependencies": {
         "@dice-roller/rpg-dice-roller": "^5.5.0",
-        "request": "^2.88.2",
-        "request-promise": "^4.2.6",
         "venom-bot": "github:orkestral/venom"
     }
 }
