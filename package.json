@@ -1,0 +1,26 @@
+{
+    "name": "whatsapp-diceroller",
+    "version": "0.0.1",
+    "description": "A WhatsApp bot for dicerolling",
+    "scripts": {
+        "start": "node app/app.js",
+        "test-dice-roller": "node app/test-dnd-dice-roller"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yaustar/whatsapp-diceroller.git"
+    },
+    "author": "Steven Yau <jobs@stevenyau.co.uk>",
+    "license": "MIT License",
+    "bugs": {
+        "url": "https://github.com/yaustar/whatsapp-diceroller/issues"
+    },
+    "homepage": "https://github.com/yaustar/whatsapp-diceroller",
+    "private": "true",
+    "dependencies": {
+        "@dice-roller/rpg-dice-roller": "^5.5.0",
+        "request": "^2.88.2",
+        "request-promise": "^4.2.6",
+        "venom-bot": "github:orkestral/venom"
+    }
+}
